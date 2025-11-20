@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>عسل السدر</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+ 
+    <!-- Header -->
+    <header>
+         <img class="logo" src="شعار سوق عكاظ .png" alt="">
+        
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero" style="background-color: beige;">
+        <div class="hero-text">
+            <h1 style="color: rgb(0, 0, 0); font-family: 'Courier New', Courier, monospace;">عسل السدر المحلي </h1>
+             <h3 style="font-family: 'Courier New', Courier, monospace; color: rgb(163, 183, 34);"> أعلى جودة بأحسن سعر </h3>
+             
+                <h3 style="font-family: 'Courier New', Courier, monospace; color: rgb(188, 165, 17);"> توصيل متوفر داخل ولاية قسنطينة </h3>
+            
+        </div>
+        <img style=" margin: 0 auto; " src="honeySidr.png" alt="منتج" class="hero-img">
+    </section>
+
+    <!-- Features -->
+    <section class="features" >
+         <h2> لماذا عسل السدر؟ </h2>
+         <br>
+        <div class="features-container">
+
+            <div class="feature">
+                <h3>✔ طبيعي 100%</h3>
+                <p>منتج مضمون بدون أي إضافات صناعية</p>
+            </div>
+              
+            <div class="feature">
+                <h3> ✔ تحسين الهضم</h3>
+                <p>يساعد على تهدئة اضطرابات المعدة وتحسين حركة الأمعاء.</p>
+            </div>
+             
+            <div class="feature">
+                <h3>✔ تقوية المناعة</h3>
+                <p>يحتوي على مضادات أكسدة قوية تساعد الجسم على مقاومة الأمراض.</p>
+            </div>
+
+            <div class="feature">
+                <h3>✔ تحسين صحة القلب</h3>
+                <p>يحتوي على مركبات تساعد على خفض ضغط الدم وتحسين الدورة الدموية.</p>
+            </div>
+
+            <div class="feature">
+                <h3>✔ مضاد للسعال</h3>
+                <p>يعمل كمهدئ طبيعي للحلق ويخفف السعال.</p>
+            </div>
+        
+        
+
+        </div>
+    </section>
+
+    <!-- PRICE -->
+    <section class="price-section" style="background-color: beige;">
+          <!-- اختيار الحجم -->
+    <label for="size">اختر الحجم:</label>
+    <select id="size" required >
+        <option value="1500">250غ – 1500 دج</option>
+        <option value="3000">250غ – 3000 دج</option>
+        <option value="6000">1 كغ – 6000 دج</option>
+    </select>
+    
+     <br>
+     <br>
+    <!-- اختيار الكمية -->
+    <label for="quantity" >الكمية:</label>
+    <input type="number" id="quantity" min="1" value="1" required style="width: 70px;" >
+
+    <!-- عرض السعر الإجمالي -->
+   <p >السعر الإجمالي: <span id="totalPrice" style="font-weight: bold; color: rgb(227, 37, 37);">1500</span> دج</p>
+    </section>
+
+    <!-- ORDER FORM -->
+    <section id="order" class="order">
+        <h2>نموذج الطلب</h2>
+        <br>
+        <form id="orderForm">
+            <input type="text" id="name" placeholder="الاسم الكامل" required>
+            <input type="tel" id="phone" placeholder="رقم الهاتف" required>
+            <input type="text" id="address" placeholder="العنوان" required>
+            <button type="submit" class="btn big-btn">إرسال الطلب</button>
+          
+
+     
+        </form>
+        <p id="successMsg" class="success"></p>
+    </section>
+
+    <footer>
+        <p style="text-align: center;">© 2025 – جميع الحقوق محفوظة</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
