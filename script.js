@@ -1,4 +1,4 @@
-const WHATSAPP_NUMBER = "213664763765";
+const WHATSAPP_NUMBER = "213779724499";
 const FORM = document.getElementById("orderForm");
 const SUCCESS_MSG = document.getElementById("successMsg");
 const sizeSelect = document.getElementById("size");
@@ -40,3 +40,4 @@ FORM.addEventListener("submit", function(e){
 
 // حساب السعر الإجمالي عند تحميل الصفحة
 updateTotal();
+
