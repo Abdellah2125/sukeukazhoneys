@@ -1,674 +1,291 @@
- 
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="عسل السدر المحلي الخالص من سوق عكاظ – طبيعي 100%، توصيل سريع داخل قسنطينة. اطلب الآن عبر واتساب.">
-<meta name="keywords" content="عسل, سدر, عسل السدر, سوق عكاظ, عسل طبيعي, قسنطينة, الجزائر, عسل أصلي">
-<meta name="author" content="سوق عكاظ">
-<meta property="og:title" content="عسل السدر – سوق عكاظ">
-<meta property="og:description" content="عسل السدر المحلي الخالص – طبيعي 100%، بدون إضافات ولا حافظات. اطلب الآن!" />
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://sukeukazhoneys.vercel.app">
-<meta property="og:image" content="honeySidr.png">
-<meta name="twitter:card" content="summary_large_image">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍯</text></svg>">
-<title>عسل السدر – سوق عكاظ</title>
-<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-<style>
-*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
-
-:root {
-  --black:   #0D0A06;
-  --gold:    #C8860A;
-  --gold-lt: #E8A020;
-  --amber:   #8B4513;
-  --cream:   #F5EDD6;
-  --cream2:  #FDF6E8;
-  --text:    #1A1209;
-}
-
-html { scroll-behavior: smooth; }
-
-body {
-  background: var(--black);
-  color: var(--cream);
-  font-family: 'Tajawal', sans-serif;
-  overflow-x: hidden;
-}
-
-/* ─── HEADER ─── */
-header {
-  position: fixed; top:0; right:0; left:0; z-index:999;
-  display:flex; align-items:center; justify-content:space-between;
-  padding: 14px 5%;
-  background: rgba(13,10,6,0.92);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(200,134,10,0.2);
-}
-header img { height: 52px; filter: brightness(1.1); }
-.nav-cta {
-  padding: 10px 26px;
-  background: var(--gold);
-  color: #fff;
-  border-radius: 4px;
-  font-weight: 700;
-  font-size: 15px;
-  text-decoration: none;
-  letter-spacing: 0.3px;
-  transition: background 0.25s;
-}
-.nav-cta:hover { background: var(--gold-lt); }
-
-/* ─── HERO ─── */
-.hero {
-  min-height: 100vh;
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 120px 7% 80px;
-  position: relative;
-  overflow: hidden;
-  gap: 40px;
-}
-
-.hero::before {
-  content: '';
-  position: absolute; inset:0;
-  background: radial-gradient(ellipse 70% 80% at 65% 50%, rgba(200,134,10,0.08) 0%, transparent 70%),
-              radial-gradient(ellipse 40% 40% at 20% 80%, rgba(139,69,19,0.12) 0%, transparent 60%);
-  pointer-events: none;
-}
-
-/* Honey drip decoration */
-.hero::after {
-  content: '';
-  position: absolute; top:0; left:0; right:0;
-  height: 3px;
-  background: linear-gradient(90deg, transparent, var(--gold), transparent);
-}
-
-.hero-content { max-width: 520px; z-index:2; }
-
-.eyebrow {
-  display: inline-block;
-  font-size: 12px;
-  font-weight: 500;
-  letter-spacing: 3px;
-  color: var(--gold);
-  text-transform: uppercase;
-  border: 1px solid rgba(200,134,10,0.4);
-  padding: 6px 16px;
-  border-radius: 2px;
-  margin-bottom: 28px;
-}
-
-.hero h1 {
-  font-size: clamp(44px, 6vw, 78px);
-  font-weight: 900;
-  line-height: 1.1;
-  color: var(--cream);
-  margin-bottom: 10px;
-}
-
-.hero h1 .highlight {
-  color: var(--gold);
-  display: block;
-}
-
-.hero-sub {
-  font-size: 17px;
-  color: rgba(245,237,214,0.65);
-  line-height: 1.7;
-  margin: 20px 0 36px;
-  font-weight: 300;
-}
-
-.hero-cta {
-  display: inline-flex; align-items:center; gap: 12px;
-  padding: 17px 36px;
-  background: var(--gold);
-  color: #fff;
-  font-size: 17px;
-  font-weight: 700;
-  border-radius: 4px;
-  text-decoration: none;
-  transition: all 0.3s;
-  box-shadow: 0 8px 32px rgba(200,134,10,0.35);
-}
-.hero-cta:hover {
-  background: var(--gold-lt);
-  transform: translateY(-2px);
-  box-shadow: 0 12px 40px rgba(200,134,10,0.5);
-}
-
-.delivery-badge {
-  display: inline-flex; align-items:center; gap:8px;
-  margin-top: 20px;
-  font-size: 13px;
-  color: rgba(245,237,214,0.5);
-}
-.delivery-badge span { color: var(--gold); font-weight: 600; }
-
-/* Jar wrapper */
-.hero-visual {
-  position: relative;
-  z-index: 2;
-  flex-shrink: 0;
-}
-
-.jar-glow {
-  position: absolute;
-  width: 300px; height: 300px;
-  background: radial-gradient(circle, rgba(200,134,10,0.25) 0%, transparent 70%);
-  top: 50%; left: 50%;
-  transform: translate(-50%, -50%);
-  border-radius: 50%;
-  animation: pulse-glow 3s ease-in-out infinite alternate;
-}
-
-@keyframes pulse-glow {
-  from { transform: translate(-50%,-50%) scale(0.9); opacity:0.6; }
-  to   { transform: translate(-50%,-50%) scale(1.1); opacity:1; }
-}
-
-.hero-jar {
-  width: clamp(220px, 28vw, 360px);
-  position: relative; z-index: 1;
-  filter: drop-shadow(0 30px 60px rgba(200,134,10,0.3));
-  animation: float 4s ease-in-out infinite alternate;
-}
-
-@keyframes float {
-  from { transform: translateY(0px); }
-  to   { transform: translateY(-16px); }
-}
-
-/* Drip SVG */
-.drip-container {
-  position: absolute;
-  top: -18px; left: 50%; transform: translateX(-50%);
-  width: 60px; z-index:3;
-}
-
-/* ─── STATS BAR ─── */
-.stats {
-  background: var(--gold);
-  padding: 28px 7%;
-  display: flex; justify-content:center; gap: 60px;
-  flex-wrap: wrap;
-}
-.stat { text-align:center; color:#fff; }
-.stat-num { font-size: 28px; font-weight: 900; display:block; }
-.stat-lbl { font-size: 12px; font-weight: 400; opacity:0.85; letter-spacing:0.5px; }
-
-/* ─── FEATURES ─── */
-.features {
-  background: var(--black);
-  padding: 100px 7%;
-  text-align: center;
-}
-
-.section-eyebrow {
-  font-size: 12px; letter-spacing:3px; color:var(--gold);
-  text-transform:uppercase; margin-bottom:14px; display:block;
-}
-
-.section-title {
-  font-size: clamp(30px, 4vw, 48px);
-  font-weight: 800;
-  color: var(--cream);
-  margin-bottom: 60px;
-  line-height: 1.25;
-}
-
-.features-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 24px;
-  max-width: 1100px;
-  margin: 0 auto;
-}
-
-.feature-card {
-  background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(200,134,10,0.15);
-  border-radius: 8px;
-  padding: 36px 24px;
-  transition: all 0.3s;
-  position: relative;
-  overflow: hidden;
-}
-
-.feature-card::before {
-  content:'';
-  position:absolute; top:0; right:0; left:0; height:2px;
-  background: linear-gradient(90deg, transparent, var(--gold), transparent);
-  opacity:0; transition: opacity 0.3s;
-}
-
-.feature-card:hover {
-  border-color: rgba(200,134,10,0.4);
-  background: rgba(200,134,10,0.06);
-  transform: translateY(-4px);
-}
-.feature-card:hover::before { opacity:1; }
-
-.feature-icon { font-size: 36px; margin-bottom:18px; display:block; }
-
-.feature-card h3 {
-  font-size: 17px; font-weight: 700; color:var(--cream);
-  margin-bottom: 10px;
-}
-.feature-card p {
-  font-size: 14px; color: rgba(245,237,214,0.55);
-  line-height: 1.7;
-}
-
-/* ─── ORDER ─── */
-.order-section {
-  background: var(--cream2);
-  padding: 100px 7%;
-  color: var(--text);
-}
-
-.order-inner {
-  max-width: 1000px; margin: 0 auto;
-  display: grid; grid-template-columns: 1fr 1fr;
-  gap: 60px; align-items: start;
-}
-
-.order-info .section-eyebrow { color: var(--amber); }
-.order-info .section-title { color: var(--text); margin-bottom:24px; }
-
-.order-info p {
-  font-size: 15px; color: #5a3d1a;
-  line-height: 1.8; margin-bottom: 28px;
-}
-
-.trust-items { display:flex; flex-direction:column; gap:12px; }
-.trust-item {
-  display:flex; align-items:center; gap:10px;
-  font-size:14px; color: #5a3d1a; font-weight:500;
-}
-.trust-dot {
-  width:8px; height:8px; border-radius:50%;
-  background: var(--gold); flex-shrink:0;
-}
-
-/* Form */
-.order-form {
-  background: #fff;
-  border-radius: 10px;
-  padding: 40px 36px;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.10);
-}
-
-.form-title {
-  font-size: 22px; font-weight: 800; color: var(--text);
-  margin-bottom: 28px;
-  padding-bottom: 16px;
-  border-bottom: 2px solid var(--gold);
-}
-
-.form-group { margin-bottom: 18px; }
-.form-group label {
-  display:block; font-size:13px; font-weight:600;
-  color: #5a3d1a; margin-bottom:7px;
-}
-
-.form-group input,
-.form-group select {
-  width:100%; padding: 13px 16px;
-  font-family:'Tajawal',sans-serif;
-  font-size:15px; color: var(--text);
-  background:#f9f6f0;
-  border: 1.5px solid #e8d9c0;
-  border-radius: 6px;
-  outline:none; transition: border-color 0.25s;
-  direction: rtl;
-}
-
-.form-group input:focus,
-.form-group select:focus {
-  border-color: var(--gold);
-  background:#fff;
-}
-
-.price-display {
-  background: linear-gradient(135deg, var(--black) 0%, #1a1209 100%);
-  border-radius: 8px;
-  padding: 18px 20px;
-  margin: 22px 0;
-  display:flex; justify-content:space-between; align-items:center;
-}
-
-.price-label { color: rgba(245,237,214,0.6); font-size:14px; }
-.price-amount {
-  font-size: 28px; font-weight: 900;
-  color: var(--gold);
-}
-.price-currency { font-size:14px; color:rgba(245,237,214,0.6); margin-right:4px; }
-
-.submit-btn {
-  width:100%;
-  padding: 16px;
-  background: #25D366;
-  color:#fff;
-  border:none; border-radius: 6px;
-  font-family:'Tajawal',sans-serif;
-  font-size: 17px; font-weight: 800;
-  cursor:pointer;
-  display:flex; align-items:center; justify-content:center; gap:10px;
-  transition: all 0.3s;
-  box-shadow: 0 6px 24px rgba(37,211,102,0.3);
-}
-.submit-btn:hover {
-  background: #128C7E;
-  transform: translateY(-2px);
-  box-shadow: 0 10px 32px rgba(37,211,102,0.45);
-}
-
-.field-error {
-  display:block; margin-top:4px;
-  color:#e74c3c; font-size:12px; font-weight:500;
-  min-height:16px;
-}
-.success-msg {
-  display:none; margin-top:14px;
-  background:#e8f9ef; border:1px solid #b2dfca;
-  border-radius:6px; padding:14px;
-  text-align:center; color:#1a7a40;
-  font-weight:600; font-size:15px;
-}
-
-/* ─── FOOTER ─── */
-footer {
-  background: #070503;
-  padding: 36px 7%;
-  text-align:center;
-  border-top: 1px solid rgba(200,134,10,0.15);
-  color: rgba(245,237,214,0.35);
-  font-size: 13px;
-}
-footer a { color: var(--gold); text-decoration:none; }
-
-/* ─── RESPONSIVE ─── */
-@media(max-width:900px){
-  .hero { flex-direction:column; text-align:center; padding-top:100px; }
-  .hero-content { max-width:100%; }
-  .delivery-badge { justify-content:center; }
-  .order-inner { grid-template-columns:1fr; gap:40px; }
-  .stats { gap:30px; }
-}
-
-@media(max-width:768px){
-  .stats { gap: 40px; }
-  .stat-num { font-size: 24px; }
-  .features { padding: 70px 5%; }
-  .section-title { margin-bottom: 40px; }
-  .hero-sub { font-size: 16px; }
-}
-
-@media(max-width:600px){
-  .hero h1 { font-size: 38px; }
-  .hero { padding: 100px 5% 60px; }
-  .features-grid { grid-template-columns:1fr; }
-  .order-section { padding: 60px 5%; }
-  .order-form { padding: 28px 20px; }
-  header { padding: 12px 4%; }
-  header img { height: 44px; }
-  .nav-cta { padding: 8px 18px; font-size: 13px; }
-}
-
-@media(max-width:400px){
-  header { padding: 10px 3%; }
-  header img { height: 38px; }
-  .hero { padding: 90px 4% 50px; min-height: 90vh; }
-  .hero h1 { font-size: 32px; }
-  .hero-sub { font-size: 14px; margin: 14px 0 28px; }
-  .hero-cta { padding: 14px 24px; font-size: 15px; }
-  .eyebrow { font-size: 10px; padding: 4px 12px; margin-bottom: 20px; }
-  .stats { gap: 16px; padding: 20px 4%; }
-  .stat-num { font-size: 20px; }
-  .stat-lbl { font-size: 10px; }
-  .features { padding: 50px 4%; }
-  .feature-card { padding: 24px 16px; }
-  .section-title { font-size: 24px; margin-bottom: 30px; }
-  .order-section { padding: 40px 4%; }
-  .order-inner { gap: 28px; }
-  .order-form { padding: 20px 14px; }
-  .form-title { font-size: 18px; margin-bottom: 20px; }
-  .form-group input, .form-group select { padding: 11px 12px; font-size: 14px; }
-  .price-amount { font-size: 22px; }
-  .submit-btn { padding: 13px; font-size: 15px; }
-  footer { padding: 24px 4%; font-size: 11px; }
-}
-
-@media(prefers-reduced-motion: reduce){
-  .hero-jar, .jar-glow { animation:none; }
-}
-</style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="عسل السدر المحلي الخالص من سوق عكاظ – طبيعي 100%، توصيل سريع داخل قسنطينة. اطلب الآن عبر واتساب." />
+    <meta name="keywords" content="عسل, سدر, عسل السدر, سوق عكاظ, عسل طبيعي, قسنطينة, الجزائر, عسل أصلي" />
+    <meta name="author" content="سوق عكاظ" />
+    <meta property="og:title" content="عسل السدر – سوق عكاظ" />
+    <meta property="og:description" content="عسل السدر المحلي الخالص – طبيعي 100%، بدون إضافات ولا حافظات. اطلب الآن!" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://sukeukazhoneys.vercel.app" />
+    <meta property="og:image" content="honeySidr.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍯</text></svg>" />
+    <title>عسل السدر – سوق عكاظ</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-<!-- HEADER -->
-<header>
-<img src="logo.png" alt="شعار سوق عكاظ ">
-    <a href="#order" class="nav-cta">اطلب الآن</a>
-</header>
-
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-content">
-    <div class="eyebrow">سوق عكاظ – منتجات طبيعية أصيلة</div>
-    <h1>
-      عسل السدر
-      <span class="highlight">المحلي الخالص</span>
-    </h1>
-    <p class="hero-sub">
-      من مناحل طبيعية مباشرةً إلى طاولتك — عسل سدر أصلي بجودة استثنائية،
-      بدون إضافات ولا حافظات.
-    </p>
-    <a href="#order" class="hero-cta">
-      <span>اطلب الآن</span>
-      <span>←</span>
-    </a>
-    <div class="delivery-badge">
-      🚚 <span>توصيل مجاني</span> داخل ولاية قسنطينة
-    </div>
-  </div>
-
-  <div class="hero-visual">
-    <div class="jar-glow"></div>
-   <img src="honeySidr.png" alt="عسل السدر ">
-</div>
-</section>
-
-<!-- STATS -->
-<div class="stats">
-  <div class="stat"><span class="stat-num">100%</span><span class="stat-lbl">طبيعي خالص</span></div>
-  <div class="stat"><span class="stat-num">48h</span><span class="stat-lbl">توصيل سريع</span></div>
-  <div class="stat"><span class="stat-num">+500</span><span class="stat-lbl">عميل راضٍ</span></div>
-  <div class="stat"><span class="stat-num">صفر</span><span class="stat-lbl">إضافات صناعية</span></div>
-</div>
-
-<!-- FEATURES -->
-<section class="features">
-  <span class="section-eyebrow">لماذا عسل السدر؟</span>
-  <h2 class="section-title">فوائد استثنائية في كل ملعقة</h2>
-
-  <div class="features-grid">
-    <div class="feature-card">
-      <span class="feature-icon">🌿</span>
-      <h3>طبيعي 100%</h3>
-      <p>منتج مضمون بدون أي إضافات صناعية أو حافظات كيميائية.</p>
-    </div>
-    <div class="feature-card">
-      <span class="feature-icon">🛡️</span>
-      <h3>تقوية المناعة</h3>
-      <p>يحتوي على مضادات أكسدة قوية تساعد الجسم على مقاومة الأمراض.</p>
-    </div>
-    <div class="feature-card">
-      <span class="feature-icon">💚</span>
-      <h3>تحسين الهضم</h3>
-      <p>يساعد على تهدئة اضطرابات المعدة وتحسين حركة الأمعاء بشكل طبيعي.</p>
-    </div>
-    <div class="feature-card">
-      <span class="feature-icon">❤️</span>
-      <h3>صحة القلب</h3>
-      <p>مركبات طبيعية تساعد على تحسين الدورة الدموية وضبط ضغط الدم.</p>
-    </div>
-    <div class="feature-card">
-      <span class="feature-icon">🍯</span>
-      <h3>مضاد للسعال</h3>
-      <p>يعمل كمهدئ طبيعي للحلق ويخفف السعال دون أعراض جانبية.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ORDER -->
-<section class="order-section" id="order">
-  <div class="order-inner">
-    <!-- Info side -->
-    <div class="order-info">
-      <span class="section-eyebrow">اطلب الآن</span>
-      <h2 class="section-title">أعلى جودة<br>بأحسن سعر</h2>
-      <p>
-        نوصل مباشرةً إلى باب بيتك داخل ولاية قسنطينة.
-        املأ النموذج وسيصلك طلبك في أقرب وقت.
-      </p>
-      <div class="trust-items">
-        <div class="trust-item"><div class="trust-dot"></div>منتج أصلي مضمون 100%</div>
-        <div class="trust-item"><div class="trust-dot"></div>توصيل سريع داخل قسنطينة</div>
-        <div class="trust-item"><div class="trust-dot"></div>إرسال الطلب مباشرة عبر واتساب</div>
-        <div class="trust-item"><div class="trust-dot"></div>دفع عند الاستلام</div>
-      </div>
-    </div>
-
-    <!-- Form side -->
-    <div class="order-form">
-      <div class="form-title">نموذج الطلب</div>
-      <form id="orderForm">
-        <div class="form-group">
-          <label>الاسم الكامل</label>
-          <input type="text" id="name" placeholder="أدخل اسمك الكامل" required>
+    <!-- ========== HEADER ========== -->
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">
+                <img src="logo.png" alt="شعار سوق عكاظ" />
+            </a>
+            <nav class="nav">
+                <a href="#features">المميزات</a>
+                <a href="#pricing">السعر</a>
+                <a href="#order" class="btn btn-primary">اطلب الآن</a>
+            </nav>
+            <button class="menu-toggle" aria-label="القائمة" id="menuToggle">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M3 12h18M3 6h18M3 18h18" />
+                </svg>
+            </button>
         </div>
-        <div class="form-group">
-          <label>رقم الهاتف</label>
-          <input type="tel" id="phone" placeholder="05 XX XX XX XX" pattern="0(5|6|7|9)\d{8}" title="أدخل رقم هاتف جزائري صحيح (10 أرقام، يبدأ بـ 05 أو 06 أو 07 أو 09)" inputmode="numeric" required>
-          <span class="field-error" id="phoneError"></span>
+    </header>
+
+    <!-- ========== HERO ========== -->
+    <section class="hero">
+        <div class="container hero-grid">
+            <div class="hero-content">
+                 
+                <h1>
+                    عسل السدر
+                    <span class="highlight">المحلي الخالص</span>
+                </h1>
+                <p class="subtitle">
+                    من مناحل طبيعية مباشرةً إلى طاولتك — عسل سدر أصلي بجودة استثنائية،
+                    بدون إضافات ولا حافظات.
+                </p>
+                <div class="hero-tags">
+                    <span><i class="icon-check"></i> طبيعي 100%</span>
+                    <span><i class="icon-check"></i> بدون إضافات</span>
+                    <span><i class="icon-check"></i> من المنحل إليك</span>
+                </div>
+                <div class="hero-cta">
+                    <a href="#order" class="btn btn-large">اطلب الآن</a>
+                    <span class="delivery-info">
+                        <i class="icon-truck"></i> توصيل مجاني داخل قسنطينة
+                    </span>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="glow-effect"></div>
+                <img src="honeySidr.png" alt="عسل السدر الأصلي" class="hero-image" />
+                <div class="floating-badge">
+                    <i class="icon-leaf"></i> طبيعي 100%
+                </div>
+            </div>
         </div>
-        <div class="form-group">
-          <label>العنوان</label>
-          <input type="text" id="address" placeholder="الحي، الشارع..." required>
+    </section>
+
+    <!-- ========== STATS ========== -->
+    <section class="stats">
+        <div class="container stats-grid">
+            <div class="stat-item">
+                <span class="stat-number">100%</span>
+                <span class="stat-label">طبيعي خالص</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">48h</span>
+                <span class="stat-label">توصيل سريع</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">+500</span>
+                <span class="stat-label">عميل راضٍ</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">صفر</span>
+                <span class="stat-label">إضافات صناعية</span>
+            </div>
         </div>
-        <div class="form-group">
-          <label>اختر الحجم</label>
-          <select id="size">
-            <option value="1500">250غ – 1500 دج</option>
-            <option value="3000">500غ – 3000 دج</option>
-            <option value="6000">1 كغ – 6000 دج</option>
-          </select>
+    </section>
+
+    <!-- ========== FEATURES ========== -->
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">لماذا عسل السدر؟</span>
+                <h2>فوائد استثنائية في كل ملعقة</h2>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🌿</div>
+                    <h3>طبيعي 100%</h3>
+                    <p>منتج مضمون بدون أي إضافات صناعية أو حافظات كيميائية.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🛡️</div>
+                    <h3>تقوية المناعة</h3>
+                    <p>يحتوي على مضادات أكسدة قوية تساعد الجسم على مقاومة الأمراض.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💚</div>
+                    <h3>تحسين الهضم</h3>
+                    <p>يساعد على تهدئة اضطرابات المعدة وتحسين حركة الأمعاء بشكل طبيعي.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">❤️</div>
+                    <h3>صحة القلب</h3>
+                    <p>مركبات طبيعية تساعد على تحسين الدورة الدموية وضبط ضغط الدم.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🍯</div>
+                    <h3>مضاد للسعال</h3>
+                    <p>يعمل كمهدئ طبيعي للحلق ويخفف السعال دون أعراض جانبية.</p>
+                </div>
+            </div>
         </div>
-        <div class="form-group">
-          <label>الكمية</label>
-          <input type="number" id="quantity" min="1" value="1" required>
+    </section>
+
+    <!-- ========== PRICING ========== -->
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">اختر حجمك</span>
+                <h2>أسعار تنافسية وجودة عالية</h2>
+            </div>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="pricing-badge">الأكثر مبيعاً</div>
+                    <div class="pricing-icon">🍯</div>
+                    <h3>250 غرام</h3>
+                    <div class="pricing-price">1.500 <span>دج</span></div>
+                    <ul class="pricing-features">
+                        <li><i class="icon-check"></i> مثالي للتجربة</li>
+                        <li><i class="icon-check"></i> يكفي لشهر كامل</li>
+                    </ul>
+                    <button class="btn btn-primary select-size" data-price="1500" data-size="250غ">اختر هذا</button>
+                </div>
+                <div class="pricing-card featured">
+                    <div class="pricing-badge">أفضل قيمة</div>
+                    <div class="pricing-icon">🍯</div>
+                    <h3>500 غرام</h3>
+                    <div class="pricing-price">3.000 <span>دج</span></div>
+                    <ul class="pricing-features">
+                        <li><i class="icon-check"></i> أفضل سعر للغرام</li>
+                        <li><i class="icon-check"></i> يكفي لمدة شهرين</li>
+                        <li><i class="icon-check"></i> توفير 20%</li>
+                    </ul>
+                    <button class="btn btn-primary select-size" data-price="3000" data-size="500غ">اختر هذا</button>
+                </div>
+                <div class="pricing-card">
+                    <div class="pricing-badge">عائلي</div>
+                    <div class="pricing-icon">🍯</div>
+                    <h3>1 كيلوغرام</h3>
+                    <div class="pricing-price">6.000 <span>دج</span></div>
+                    <ul class="pricing-features">
+                        <li><i class="icon-check"></i> أفضل قيمة</li>
+                        <li><i class="icon-check"></i> يكفي لعائلة كاملة</li>
+                        <li><i class="icon-check"></i> توفير 30%</li>
+                    </ul>
+                    <button class="btn btn-primary select-size" data-price="6000" data-size="1 كغ">اختر هذا</button>
+                </div>
+            </div>
+            <div class="pricing-total">
+                <div class="total-group">
+                    <label for="quantity">الكمية:</label>
+                    <input type="number" id="quantity" min="1" value="1" />
+                </div>
+                <div class="total-group">
+                    <span class="total-label">السعر الإجمالي:</span>
+                    <span class="total-price" id="totalPrice">3.000</span>
+                    <span class="currency">دج</span>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <div class="price-display">
-          <span class="price-label">السعر الإجمالي</span>
-          <div>
-            <span class="price-amount" id="totalPrice">1500</span>
-            <span class="price-currency">دج</span>
-          </div>
+    <!-- ========== ORDER ========== -->
+    <section class="order" id="order">
+        <div class="container">
+            <div class="order-grid">
+                <div class="order-info">
+                    <span class="section-tag">اطلب الآن</span>
+                    <h2>أعلى جودة<br />بأحسن سعر</h2>
+                    <p>
+                        نوصل مباشرةً إلى باب بيتك داخل ولاية قسنطينة.
+                        املأ النموذج وسيصلك طلبك في أقرب وقت.
+                    </p>
+                    <ul class="trust-list">
+                        <li><i class="icon-check"></i> منتج أصلي مضمون 100%</li>
+                        <li><i class="icon-check"></i> توصيل سريع داخل قسنطينة</li>
+                        <li><i class="icon-check"></i> إرسال الطلب عبر واتساب</li>
+                        <li><i class="icon-check"></i> دفع عند الاستلام</li>
+                    </ul>
+                </div>
+                <form id="orderForm" class="order-form">
+                    <div class="form-title">نموذج الطلب</div>
+                    <div class="form-group">
+                        <label for="name">👤 الاسم الكامل</label>
+                        <input type="text" id="name" placeholder="أدخل اسمك الكامل" required />
+                        <span class="field-error" id="nameError"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">📞 رقم الهاتف</label>
+                        <input type="tel" id="phone" placeholder="05 XX XX XX XX" required />
+                        <span class="field-error" id="phoneError"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="address">📍 العنوان</label>
+                        <input type="text" id="address" placeholder="الحي، الشارع..." required />
+                        <span class="field-error" id="addressError"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="sizeSelect">📦 اختر الحجم</label>
+                        <select id="sizeSelect">
+                            <option value="1500">250غ – 1.500 دج</option>
+                            <option value="3000" selected>500غ – 3.000 دج</option>
+                            <option value="6000">1 كغ – 6.000 دج</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="quantityForm">🔢 الكمية</label>
+                        <input type="number" id="quantityForm" min="1" value="1" required />
+                    </div>
+                    <div class="price-display">
+                        <span class="price-label">السعر الإجمالي</span>
+                        <div>
+                            <span class="price-amount" id="totalPriceForm">3.000</span>
+                            <span class="price-currency">دج</span>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-submit">
+                        <i class="icon-whatsapp" style="width:20px;height:20px"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></i> إرسال الطلب عبر واتساب
+                    </button>
+                    <div class="success-msg" id="successMsg"></div>
+                </form>
+            </div>
         </div>
+    </section>
 
-        <button type="submit" class="submit-btn">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-          </svg>
-          إرسال الطلب عبر واتساب
-        </button>
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="logo.png" alt="سوق عكاظ" />
+                    <p>عسل السدر الأصلي – منتج طبيعي 100%</p>
+                </div>
+                <div class="footer-social">
+                    <a href="https://web.facebook.com/profile.php?id=61576940163691&sk=about" target="_blank" aria-label="فيسبوك">
+                        <i class="icon-facebook">
+                            <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                        </i>
+                    </a>
+                    <a href="https://www.instagram.com/suk_eukaz" target="_blank" aria-label="انستغرام">
+                        <i class="icon-instagram">
+                            <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                        </i>
+                    </a>
+                    <a href="https://wa.me/213779724499" target="_blank" aria-label="واتساب">
+                        <i class="icon-whatsapp">
+                            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                        </i>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 سوق عكاظ – جميع الحقوق محفوظة</p>
+            </div>
+        </div>
+    </footer>
 
-        <div class="success-msg" id="successMsg">✅ تم إرسال طلبك بنجاح! سنتواصل معك قريباً.</div>
-      </form>
-    </div>
-  </div>
-</section>
-
-<footer>
-  <p>© 2025 سوق عكاظ – جميع الحقوق محفوظة | <a href="https://wa.me/213779724499">تواصل معنا</a></p>
-</footer>
-
-<script>
-const WHATSAPP_NUMBER = "213779724499";
-const sizeSelect = document.getElementById("size");
-const quantityInput = document.getElementById("quantity");
-const totalPriceEl = document.getElementById("totalPrice");
-const phoneInput = document.getElementById("phone");
-const phoneError = document.getElementById("phoneError");
-const form = document.getElementById("orderForm");
-
-function updateTotal() {
-  const price = parseInt(sizeSelect.value);
-  const qty = Math.max(1, parseInt(quantityInput.value) || 1);
-  totalPriceEl.textContent = (price * qty).toLocaleString('ar-DZ');
-}
-
-function validateForm() {
-  const phone = phoneInput.value.trim();
-  const phonePattern = /^0(5|6|7|9)\d{8}$/;
-  if (phone && !phonePattern.test(phone)) {
-    phoneError.textContent = "⚠️ رقم الهاتف غير صحيح. يجب أن يكون 10 أرقام ويبدأ بـ 05 أو 06 أو 07 أو 09";
-    phoneInput.style.borderColor = "#e74c3c";
-    document.getElementById("name").style.borderColor = "";
-    document.getElementById("address").style.borderColor = "";
-    return false;
-  }
-  phoneError.textContent = "";
-  phoneInput.style.borderColor = "";
-  return true;
-}
-
-sizeSelect.addEventListener("change", updateTotal);
-quantityInput.addEventListener("input", updateTotal);
-phoneInput.addEventListener("blur", validateForm);
-phoneInput.addEventListener("input", function() {
-  this.value = this.value.replace(/\D/g, "").slice(0, 10);
-  if (this.value.length === 10) validateForm();
-});
-updateTotal();
-
-form.addEventListener("submit", function(e) {
-  e.preventDefault();
-  if (!validateForm()) return;
-
-  const name    = document.getElementById("name").value.trim();
-  const phone   = document.getElementById("phone").value.trim();
-  const address = document.getElementById("address").value.trim();
-  const sizeText = sizeSelect.options[sizeSelect.selectedIndex].text;
-  const qty   = quantityInput.value;
-  const total = totalPriceEl.textContent;
-
-  const msg = encodeURIComponent(
-    "🍯 *طلب جديد – عسل السدر*\n\n" +
-    "👤 الاسم: " + name + "\n" +
-    "📞 الهاتف: " + phone + "\n" +
-    "📍 العنوان: " + address + "\n" +
-    "📦 الحجم: " + sizeText + "\n" +
-    "🔢 الكمية: " + qty + "\n" +
-    "💰 الإجمالي: " + total + " دج"
-  );
-
-  window.open("https://wa.me/" + WHATSAPP_NUMBER + "?text=" + msg, "_blank");
-
-  const sm = document.getElementById("successMsg");
-  sm.style.display = "block";
-  this.reset();
-  updateTotal();
-  setTimeout(() => { sm.style.display = "none"; }, 5000);
-});
-</script>
+    <script src="script.js"></script>
 </body>
 </html>
 
